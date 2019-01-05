@@ -64,12 +64,12 @@ const dashboardRoutes = [
     ]
   },
   {
-    path: "/giangvien/quanlychung/dskhoa/:id",
+    path: "/giangvien/tiendo/:id",
     sidebarName: "Khoa",
     navbarName: "Khoa",
     icon: "content_paste",
     hide: true,
-    component: ShowKhoa
+    component: QuanLyTienDo
   },// de truoc dskhoa
   {
     path: "/giangvien/quanlychung",
@@ -122,17 +122,10 @@ const dashboardRoutes = [
       },
       {
         path: "/giangvien/diem",
-        sidebarName: "Phân công hướng dẫn",
-        navbarName: "Phân công hướng dẫn",
+        sidebarName: "Quản lí điểm",
+        navbarName: "Quản lí điểm",
         icon: BubbleChart,
         component: QuanLyDiem
-      },
-      {
-        path: "/giangvien/tiendo",
-        sidebarName: "Quản lý tiến độ",
-        navbarName: "Quản lý tiến độ",
-        icon: BubbleChart,
-        component: QuanLyTienDo
       },
       {
         path: "/giangvien/hoidongbaove",
