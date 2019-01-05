@@ -11,7 +11,7 @@ import CardBody from "components/Card/CardBody.jsx";
 import MaterialTable from 'material-table';
 import IconButton from '@material-ui/core/IconButton';
 import AddBoxIcon from '@material-ui/icons/AddBox';
-import NewKhoaModal from './NewKhoaModal/NewKhoaModal.jsx';
+import NewGiangVienModal from './NewGiangVienModal/NewGiangVienModal.jsx';
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
@@ -48,24 +48,22 @@ class DanhSachGiangVien extends Component {
     this.classes = this.props.classes;
     this.state = {
       cardTable: {
-        cardHeader: "Danh sách khoa",
-        cardHeaderSub: "Mục này dùng để quản lý danh sách Khoa",
+        cardHeader: "Danh sách Giảng Viên",
+        cardHeaderSub: "Mục này dùng để quản lý danh sách Giảng Viên",
         dsKhoaTable: {
           table: {
             header: [
-              { title: 'STT', field: 'id' },
-              { title: 'Ten Khoa', field: 'tenKhoa' },
-              { title: 'So Luong SV', field: 'soLuongSV', type: 'numeric' },
+                { title: 'STT', field: 'id' },
+                { title: 'Học vị', field: 'hocVi' },
+                { title: 'Tên Giảng viên', field: 'tenGV' },
+                { title: 'SĐT', field: 'sdt' },//, type: 'numeric' 
             ],
             data: [
-              { tenKhoa: "Cong nghe thong tin", soLuongSV: "696" },
-              { tenKhoa: "Cong nghe 4.0", soLuongSV: "694" },
-              { tenKhoa: "Cong nghe 3.0", soLuongSV: "693" },
-              { tenKhoa: "Cong nghe 2.0", soLuongSV: "692" },
-              { tenKhoa: "Cong nghe thuc pham", soLuongSV: "696" },
-              { tenKhoa: "Cong nghe lam web", soLuongSV: "694" },
-              { tenKhoa: "Cong nghe japan", soLuongSV: "693" },
-              { tenKhoa: "Cong nghe video", soLuongSV: "692" },
+                { hocVi: "TS.", tenGV: "Lê Đình Sinh", sdt: "0969123456" },
+                { hocVi: "TS.", tenGV: "Lê Đình Làng", sdt: "0969123456" },
+                { hocVi: "TS.", tenGV: "Lê Đình Núi", sdt: "0969123456" },
+                { hocVi: "TS.", tenGV: "Lê Đình Bạn Sơn", sdt: "0969123456" },
+                { hocVi: "TS.", tenGV: "Lê Đình", sdt: "0969123456" },
             ]
           },
         },
@@ -101,7 +99,7 @@ class DanhSachGiangVien extends Component {
             </p>
           </div>
           <IconButton style={ { float: "right" } } className={ this.classes.cardTitleWhite } onClick={ this.toggleModalNewKhoaOpen }>
-            <span style={ { paddingRight: "10px", fontSize: "20px" } }>Tạo khoa mới</span>
+            <span style={ { paddingRight: "10px", fontSize: "20px" } }>Tạo Giảng Viên Mới</span>
             <AddBoxIcon fontSize="inherit" />
           </IconButton>
         </CardHeader>
@@ -182,7 +180,7 @@ class DanhSachGiangVien extends Component {
         <GridItem xs={ 11 } sm={ 11 } md={ 11 }>
           { this.rawDataToTable() }
         </GridItem>
-        <NewKhoaModal open={ this.state.modalNewKhoaOpen } onClose={ this.toggleModalNewKhoaOpen } />
+        <NewGiangVienModal open={ this.state.modalNewKhoaOpen } onClose={ this.toggleModalNewKhoaOpen } />
       </GridContainer>
     );
   }

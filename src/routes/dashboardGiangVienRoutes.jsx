@@ -8,7 +8,7 @@ import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
 // core components/views
 import DashboardPage from "views/Dashboard/Dashboard.jsx";
-import UserProfile from "views/UserProfile/UserProfile.jsx";
+import UserProfile from "views/DashGiangVien/UserProfile/UserProfile.jsx";
 import TableList from "views/TableList/TableList.jsx";
 import Typography from "views/Typography/Typography.jsx";
 import Maps from "views/Maps/Maps.jsx";
@@ -19,6 +19,8 @@ import DanhSachKhoa from "views/DanhSachKhoa/DanhSachKhoa.jsx";
 import ShowKhoa from "views/DanhSachKhoa/show/ShowKhoa.jsx";
 import TaoTaiKhoan from "views/DSTaiKhoan/TaoTaiKhoan.jsx";
 import DSTaiKhoan from "views/DSTaiKhoan/DSTaiKhoan.jsx";
+import QuanLyDiem from "../views/DashGiangVien/QuanLyTienDo/QuanLyDiem/QuanLyDiem.jsx";
+import DanhSachDoAn from "../views/DashGiangVien/QuanLyDoAn/DanhSachDoAn.jsx";
 
 
 const dashboardRoutes = [
@@ -116,14 +118,14 @@ const dashboardRoutes = [
         sidebarName: "Quản lý đồ án",
         navbarName: "Quản lý đồ án",
         icon: LibraryBooks,
-        component: Typography
+        component: DanhSachDoAn
       },
       {
-        path: "/giangvien/phancong",
+        path: "/giangvien/diem",
         sidebarName: "Phân công hướng dẫn",
         navbarName: "Phân công hướng dẫn",
         icon: BubbleChart,
-        component: null
+        component: QuanLyDiem
       },
       {
         path: "/giangvien/tiendo",
