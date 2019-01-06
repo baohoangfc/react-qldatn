@@ -23,7 +23,6 @@ import ShowDoAn from "views/QuanLyDoAn/ShowDoAn.jsx";
 import ShowBaoCao from "views/QuanLyDoAn/BaoCao/ShowBaoCao.jsx";
 import DSHoiDong from "views/QuanLyDoAn/DSHoiDong.jsx";
 import ShowHoiDong from "views/QuanLyDoAn/ShowHoiDong.jsx";
-import DanhSachGiangVien from "../views/DanhSachGiangVien/DanhSachGiangVien.jsx";
 
 const dashboardRoutes = [
   {
@@ -123,7 +122,7 @@ const dashboardRoutes = [
         sidebarName: "Giảng viên",
         navbarName: "Giảng viên",
         icon: "content_paste",
-        component: DanhSachGiangVien
+        component: TableList
       },
       {
         path: "/quanly/quanlychung/dssv",
