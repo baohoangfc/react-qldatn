@@ -33,12 +33,6 @@ const styles = {
             color: "#FFFFFF"
         }
     },
-    fab: {
-        margin: theme.spacing.unit,
-      },
-      extendedIcon: {
-        marginRight: theme.spacing.unit,
-      },
     cardTitleWhite: {
         color: "#FFFFFF",
         marginTop: "0px",
@@ -76,7 +70,7 @@ class BaoCaoTienDo extends Component {
             ngayKetThuc: new Date().subtDays(120).addDays(10).toJSON(),
         },
         dotBaoCao: [
-            { 
+            {
                 stt: 1,
                 ngayBatDau: new Date().subtDays(90).toJSON(),
                 ngayKetThuc: new Date().subtDays(90).addDays(10).toJSON(),
@@ -95,29 +89,7 @@ class BaoCaoTienDo extends Component {
         baoVe: {
             ngayBatDau: new Date().addDays(10).toJSON(),
             ngayKetThuc: new Date().addDays(15).toJSON(),
-        },
-        baocaoTienDo : [
-            {
-                title1:"Báo Cáo Tiến Độ Lần 1",
-                mota1:"Đã hoàn thành template ",
-                mota2:"Chưa viết báo cáo",
-                ngayKetThuc: new Date().addDays(15).toJSON(),
-            },
-            {
-                title1:"Báo Cáo Tiến Độ Lần 2",
-                mota1:"Đã xong database ",
-                mota2:"Chưa viết báo cáo",
-                ngayKetThuc: new Date().addDays(25).toJSON(),
-            },
-            {
-                title1:"Báo Cáo Tiến Độ Lần 3",
-                mota1:"Đã hoàn thành project ",
-                mota2:"Đã xong báo cáo",
-                ngayKetThuc: new Date().addDays(35).toJSON(),
-            },
-        ],
-        // title1:"Báo Cáo Tiến Độ Lần 1",
-        // mota1:"Đã hoàn thành template ",mota2:""
+        }
     }
 
     handleDataChangeClick = () => {
@@ -192,33 +164,6 @@ class BaoCaoTienDo extends Component {
         this.setState({ dotBaoCao: baoCaoState });
     }
 
-    tiendoBaoCao = () => {
-        return (
-            this.state.baocaoTienDo.map((dot, index) => {
-                return (
-                    <Timeline lineColor={ '#e86971' }>
-                        <TimelineItem
-                            key="001"
-                            dateText={dot.title1}
-                            style={ { color: '#e86961' } }
-                        >
-                            <h3>{dot.mota1}</h3>
-                            <p>
-                                {dot.mota2}
-                            </p>
-                            <p>
-                                Ngày Kết Thúc {dot.ngayKetThuc.substr(0, 10)}
-                            </p>
-                            <Fab color="secondary" aria-label="Edit" className={classes.fab}>
-        <Icon>edit_icon</Icon>
-      </Fab>
-                        </TimelineItem>
-                    </Timeline>
-                );
-            })
-        );
-    }
-
     render() {
         const { classes } = this.props;
         return (
@@ -227,7 +172,7 @@ class BaoCaoTienDo extends Component {
                     <CardHeader color="primary">
                         <h4 className={ classes.cardTitleWhite }>QUẢN LÝ TIẾN ĐỘ</h4>
                         <div style={ { float: "right" } }>
-                            {/* {
+                            {
                                 !this.state.isEditing ? (
                                     <IconButton onClick={ () => { this.setState({ isEditing: true }) } }>
                                         <Icon>
@@ -236,7 +181,7 @@ class BaoCaoTienDo extends Component {
                                     </IconButton>
                                 ) :
                                     null
-                            } */}
+                            }
                         </div>
                     </CardHeader>
                     <CardBody>
@@ -365,8 +310,128 @@ class BaoCaoTienDo extends Component {
                     </CardBody>
                 </Card>
 
-                {this.tiendoBaoCao()}
-                
+
+                <Timeline lineColor={ '#e86971' }>
+                    <TimelineItem
+                        key="001"
+                        dateText="11/2010 – Present"
+                        style={ { color: '#e86971' } }
+                    >
+                        <h3>Title, Company</h3>
+                        <h4>Subtitle</h4>
+                        <p>
+                            Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+                            exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+                            nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+                            reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+                            est.
+                        </p>
+                        <p>
+                            Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+                            exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+                            nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+                            reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+                            est.
+                        </p>
+                        <p>
+                            Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+                            exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+                            nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+                            reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+                            est.
+                        </p>
+                    </TimelineItem>
+                    <TimelineItem
+                        key="002"
+                        dateText="04/2009 – 11/2010"
+                        dateInnerStyle={ { background: '#61b8ff', color: '#000' } }
+                        bodyContainerStyle={ {
+                            background: '#ddd',
+                            padding: '20px',
+                            borderRadius: '8px',
+                            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+                        } }
+                    >
+                        <h3 style={ { color: '#61b8ff' } }>Title, Company</h3>
+                        <h4 style={ { color: '#61b8ff' } }>Subtitle</h4>
+                        <p>
+                            Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+                            exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+                            nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+                            reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+                            est.
+                        </p>
+                        <p>
+                            Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+                            exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+                            nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+                            reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+                            est.
+                        </p>
+                    </TimelineItem>
+                    <TimelineItem
+                        key="003"
+                        dateComponent={ (
+                            <div
+                                style={ {
+                                    display: 'block',
+                                    float: 'left',
+                                    padding: '10px',
+                                    background: 'rgb(150, 150, 150)',
+                                    color: '#fff',
+                                } }
+                            >
+                                11/2008 – 04/2009
+                            </div>
+                        ) }
+                    >
+                        <h3>Title, Company</h3>
+                        <h4>Subtitle</h4>
+                        <p>
+                            Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+                            exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+                            nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+                            reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+                            est.
+                        </p>
+                        <p>
+                            Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+                            exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+                            nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+                            reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+                            est.
+                        </p>
+                        <p>
+                            Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+                            exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+                            nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+                            reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+                            est.
+                        </p>
+                    </TimelineItem>
+                    <TimelineItem
+                        key="004"
+                        dateText="08/2008 – 11/2008"
+                        dateInnerStyle={ { background: '#76bb7f' } }
+                    >
+                        <h3>Title, Company</h3>
+                        <h4>Subtitle</h4>
+                        <p>
+                            Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+                            exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+                            nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+                            reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+                            est.
+                        </p>
+                        <p>
+                            Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+                            exercitation. Veniam velit adipisicing anim excepteur nostrud magna
+                            nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
+                            reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
+                            est.
+                        </p>
+                    </TimelineItem>
+                </Timeline>
 
             </GridContainer>
         );
